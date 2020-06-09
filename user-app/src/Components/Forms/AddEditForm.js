@@ -27,6 +27,7 @@ class AddEditForm extends React.Component {
             lastName: this.state.lastName,
             address: this.state.address,
             email: this.state.email,
+            active: true
           }
       });
   
@@ -48,7 +49,8 @@ class AddEditForm extends React.Component {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             address: this.state.address,
-            email: this.state.email
+            email: this.state.email,
+            active: true
           }
       });
   
@@ -62,14 +64,14 @@ class AddEditForm extends React.Component {
   componentDidMount(){
     // if item exists, populate the state with proper data
     if(this.props.user){
-      const { id, firstName, lastName, address, email } = this.props.user
-      this.setState({ id, firstName, lastName, address, email })
+      const { id, firstName, lastName, address, email, active } = this.props.user
+      this.setState({ id, firstName, lastName, address, email, active })
     }
   }
 
   render() {
     return (
-      <Form onSubmit={this.props.user ? this.submitFormEdit : this.submitFormAdd}>
+      <Form onSubmit={this.props.user ? this.submitFormEdit : this.submitFormAdd} >
         <FormGroup>
           <Label for="firstName">First Name</Label>
           <Input type="text" name="firstName" id="firstName" onChange={this.onChange} value={this.state.firstName === null ? '' : this.state.firstName} />
