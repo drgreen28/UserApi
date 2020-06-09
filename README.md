@@ -4,5 +4,5 @@
 2. In the Package Manager Console, execute command Update-Database
 3. With UserApi set as startup project, start debug
 4. In PowerShell, navigate to /user-app
-  a) npm install
-  b) npm start
+5. npm install
+6. npm start
