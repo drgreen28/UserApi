@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{94F5BC0E-353E-4B14-8FCD-4DEF3A29639F}"
 	ProjectSection(SolutionItems) = preProject
 		postgres.yaml = postgres.yaml
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "user-app", "user-app\", "{430151A9-D531-4EE9-A92E-DDFAB631076D}"
