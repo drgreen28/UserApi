@@ -25,16 +25,9 @@ namespace UserApi.Services
         public ServiceResponse<UserModel> AddUser(UserModel userModel)
         {
             ServiceResponse<UserModel> response = new ServiceResponse<UserModel>();
-            //if(_userContext.Users.Any(x=>x.Id == userModel.Id))
-            //{
-            //    response.Message = "User Already Exists";
-            //    response.Success = false;
-            //    response.ReturnValue = userModel;
-            //    return response;
-            //}
-
             try
             {
+                userModel.Active = true;
                 var user = _mapper.Map<User>(userModel);
                 _userContext.Add(user);
                 _userContext.SaveChanges();
@@ -102,7 +95,7 @@ namespace UserApi.Services
 
             try
             {
-                var users = _userContext.Users.Where(x => (bool)x.Active);
+                var users = _userContext.Users.Where(x => x.Active);
                 response.ReturnValue = _mapper.Map<IEnumerable<UserModel>>(users.ToList());
             }
             catch (Exception e)

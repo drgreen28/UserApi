@@ -22,9 +22,7 @@ namespace UserDb
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>()
-                .Property(b => b.Active)
-                .HasDefaultValue(true);
+            modelBuilder.Entity<User>();
 
             base.OnModelCreating(modelBuilder);
         }
